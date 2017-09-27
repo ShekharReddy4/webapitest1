@@ -17,7 +17,6 @@ namespace WebApplication1
 
             if (token.Key == null)
             {
-                //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
                 return false;
             }
             else
@@ -25,13 +24,10 @@ namespace WebApplication1
                 string username = token.Value.FirstOrDefault().ToString();
                 if (username == "shekhar")
                 {
-                    //Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(username), null);
-                    //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.OK);
                     return true;
                 }
                 else
                 {
-                    //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
                     return false;
                 }
             }
