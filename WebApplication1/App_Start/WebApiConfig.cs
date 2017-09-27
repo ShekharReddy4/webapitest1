@@ -18,7 +18,6 @@ namespace WebApplication1
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}"
             );
-
         }
     }
 }

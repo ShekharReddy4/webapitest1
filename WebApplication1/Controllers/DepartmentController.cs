@@ -8,6 +8,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [AuthorizeUser]
     public class DepartmentController : ApiController
     {
         private static List<Department> _departmentList = new List<Department>();
