@@ -21,9 +21,13 @@ namespace WebApplication1
             }
             else
             {
+                // retrive the username and password from here
+                // and assign it to the custom principal and custom roles 
                 string username = token.Value.FirstOrDefault().ToString();
                 if (username == "shekhar")
                 {
+                    Thread.CurrentPrincipal = new GenericPrincipal(
+                        new GenericIdentity(username), null);
                     return true;
                 }
                 else
