@@ -9,7 +9,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [AuthorizeUser]
+    [Authorize]
     public class EmployeesController : ApiController
     {
         private static List<Employees> _employeesList = new List<Employees>();
@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, _employeesList);
         }
 
-        // POST: api/department
+        // POST: api/employees
         public HttpResponseMessage AddEmployees(Employees Employee)
         {
             _employeesList.Add(Employee);
@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, Employee);
         }
 
-        // GET: api/department/id
+        // GET: api/employees/id
         public HttpResponseMessage GetEmployeeByid(int id)
         {
             Employees empObj = _employeesList.Find(m => m.id == id);
@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
             }
         }
 
-        //UPDATE: api.department/id
+        //UPDATE: api/employees/id
         [HttpPut]
         public HttpResponseMessage updateempl(int id, [FromBody]Employees eObj)
         {

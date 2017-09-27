@@ -7,9 +7,9 @@ namespace WebApplication1.Models
 {
     public class Employees
     {
-        public int id;
-        public string name;
-        public string des;
-        public string department;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string des { get; set; }
+        public string department { get; set; }
     }
 }

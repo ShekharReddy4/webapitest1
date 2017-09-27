@@ -8,7 +8,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [AuthorizeUser]
+    [Authorize]
     public class DepartmentController : ApiController
     {
         private static List<Department> _departmentList = new List<Department>();
@@ -20,7 +20,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: api/department
-        [HttpPost]
         public HttpResponseMessage AddDepartment(Department department)
         {
             _departmentList.Add(department);
