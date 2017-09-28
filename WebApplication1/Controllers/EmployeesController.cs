@@ -22,6 +22,7 @@ namespace WebApplication1.Controllers
         }
 
         // POST: api/employees
+        [Authorize(Roles = "s,h")]
         public HttpResponseMessage AddEmployees(Employees Employee)
         {
             _employeesList.Add(Employee);
@@ -45,6 +46,7 @@ namespace WebApplication1.Controllers
 
         //UPDATE: api/employees/id
         [HttpPut]
+        [Authorize(Roles = "r")]
         public HttpResponseMessage updateempl(int id, [FromBody]Employees eObj)
         {
             Employees empObj = _employeesList.Find(m => m.id == id);
